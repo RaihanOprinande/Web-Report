@@ -40,6 +40,7 @@
 
     .box-2 {
         padding: 10px;
+        margin-top: 0 !important;
     }
 
     .box-1,
@@ -78,11 +79,21 @@
     }
 
     .btn.btn-primary {
-        background-color: transparent;
-        color: #ee82ee;
-        border: 0px;
-        padding: 0;
+        background-color: #ee82ee;
+        color: white;
+        /* border: 0px; */
+        padding: 10;
+        width: 150px;
         font-size: 14px;
+        border: #ee82ee;
+        border-radius: 10px;
+    }
+
+    .btn.btn-primary:hover {
+        background-color: #db78db;
+        color: white;
+        font-size: 14px;
+        border: #ee82ee;
     }
 
     .btn.btn-primary .fas.fa-chevron-right {
@@ -97,22 +108,14 @@
         font-size: 10px;
     }
 
-    .fas.fa-times {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        height: 20px;
-        width: 20px;
-        background-color: #f3cff379;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+    input.form-control {
+        /* background-color: #f8eafd; */
+        /* color: #6c3483; */
+        border: 2px solid #ffe7ff;
+        border-radius: 10px;
     }
 
-    .fas.fa-times:hover {
-        color: #ff0000;
-    }
 
     @media (max-width:767px) {
         body {
@@ -147,45 +150,37 @@
 
 <body>
     <div class="container d-flex justify-content-center align-items-center">
-        <div class="body d-md-flex align-items-center justify-content-between">
+        <div class="body d-md-flex justify-content-between">
             <div class="box-1 mt-md-0 mt-5">
                 <img src="https://images.pexels.com/photos/2033997/pexels-photo-2033997.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                     class="" alt="">
             </div>
             <div class=" box-2 d-flex flex-column h-100">
-                <div class="mt-">
-                    <p class="mb-1 h-1">Create Account.</p>
-                    <p class="text-muted mb-2">Share your thouhts with the world form today.</p>
-                    <div class="d-flex flex-column ">
-                        <p class="text-muted mb-2">Continue with...</p>
-                        <div class="d-flex align-items-center">
-                            <a href="#" class="box me-2 selectio">
-                                <span class="fab fa-facebook-f mb-2"></span>
-                                <p class="mb-0">Facebook</p>
-                            </a>
-                            <a href="#" class="box me-2">
-                                <span class="fab fa-google mb-2"></span>
-                                <p class="mb-0">Google</p>
-                            </a>
-                            <a href="#" class="box">
-                                <span class="far fa-envelope mb-2"></span>
-                                <p class="mb-0">Email</p>
-                            </a>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0 text-muted">Already have an account?</p>
-                            <div class="btn btn-primary">Log in<span class="fas fa-chevron-right ms-1"></span></div>
-                        </div>
+                <div class="mt-5 text-center">
+                    <p class="mb-2 h-1">Sign in.</p>
+                    <p class="text-muted mb-2">Welcome to HydTech <br> please fill the form below</p>
+                    {{-- <div class="d-flex flex-column ">
+                        <p class="text-muted mb-2">Fill up the form below</p>
+                    </div> --}}
+                </div>
+                <form action="/login" class="mt-3" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="emailHelp" class="form-label text-right">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email">
                     </div>
-                </div>
-                <div class="mt-auto">
-                    <p class="footer text-muted mb-0 mt-md-0 mt-4">By register you agree with our
-                        <span class="p-color me-1">terms and conditions</span>and
-                        <span class="p-color ms-1">privacy policy</span>
-                    </p>
-                </div>
+                    <div class="mb-3">
+
+                        <label for="emailHelp" class="form-label text-right">Password</label>
+                        <input type="password" name="password" class="form-control" id="password">
+
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-primary ">Login</button>
+                    </div>
+                </form>
             </div>
-            <span class="fas fa-times"></span>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
