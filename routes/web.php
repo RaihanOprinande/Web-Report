@@ -15,7 +15,9 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function () {
     Route::resource('projek', ProjekController::class);
     Route::resource('projek_task', ProjekTaskController::class);
-    Route::resource('dokumentasi', DokumentasiController::class); 
+    Route::resource('dokumentasi', DokumentasiController::class);
+    Route::resource('pengguna', UserController::class);
+
 });
 
 Route::get('/welcome', function () {
