@@ -1,6 +1,21 @@
 @extends('layouts.main')
 
 @section('content')
+    <style>
+        .btn-edit:hover {
+            background-color: white !important;
+            /* kuning */
+            color: #ffc107 !important;
+            border-color: #ffc107 !important;
+        }
+
+        .btn-delete:hover {
+            background-color: white !important;
+            /* merah */
+            color: #dc3545 !important;
+            border-color: #dc3545 !important;
+        }
+    </style>
     <div class="wrapper">
         <div class="alert mx-auto" id="alert-box mb-2">
             @if ($message = Session::get('success'))
@@ -46,10 +61,19 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm">
-                                            Edit
-
-                                        </button>
+                                        <a href="/admin/anggota/{{ $user->id }}/edit"
+                                            class="btn btn-edit btn-sm btn-warning">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="/admin/anggota/{{ $user->id }}" method="POST"
+                                            style="display:inline-block">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-delete btn-danger"
+                                                onclick="return confirm('Yakin ingin menghapus?')">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

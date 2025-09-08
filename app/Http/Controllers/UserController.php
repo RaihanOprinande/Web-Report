@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -29,7 +30,7 @@ class UserController extends Controller
             [
                 'name' => $validated['name'],
                 'email' => $validated['email'],
-                'role' => $request->role,
+                'role' => $validated['role'],
                 'password' => Hash::make($validated['password'])
             ]
         );
@@ -38,4 +39,32 @@ class UserController extends Controller
         return back()->with('error', $e->getMessage());
     }
 }
+
+    public function edit(String $id){
+            $user = User::find($id);
+            return view('admin.user.update',compact('user'));
+    }
+
+    public function update(Request $request, String $id){
+        try {
+            $user = User::findOrFail($id);
+            $validated = $request->validate([
+                'name' => 'string',
+                'role' => 'required'
+            ]);
+            $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role' => $request->role,
+        ]);
+            return redirect('/admin/anggota')->with('success','Anggota berhasil diubah');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function destroy(string $id){
+        User::destroy($id);
+        return redirect('/admin/anggota')->with('success','Anggota berhasil dihapus');
+    }
 }
