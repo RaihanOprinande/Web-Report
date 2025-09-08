@@ -13,6 +13,7 @@
 
     {{-- CSS untuk DataTables --}}
     <link href="{{ asset('datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     {{-- Font dari Google --}}
     <link
@@ -22,20 +23,19 @@
 
 <body>
     <div id="wrapper">
-        <div class="sticky-top">
+        <div style="position: fixed;">
             @include('layouts.sidebar')
         </div>
 
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column" style="margin-left: 225px;">
             <div id="content">
                 @include('layouts.topbar')
+
 
                 <div class="container-fluid">
                     @yield('content')
                 </div>
             </div>
-
-            {{-- @include('layouts.footer') --}}
         </div>
     </div>
 
@@ -49,6 +49,7 @@
     {{-- Skrip untuk DataTables --}}
     <script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     {{-- Ini adalah tempat untuk skrip khusus halaman --}}
     @stack('scripts')
