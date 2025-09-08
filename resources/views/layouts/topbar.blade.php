@@ -188,9 +188,9 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <form action="/logout" method="POST">
+                                <form action="/logout" method="POST" class="" style="margin-left: 25px;">
                                     @csrf
-                                    <button type="submit" class="dropdown-item ms-3"
+                                    <button type="submit" class="dropdown-item"
                                         style="border:none; background:none; padding:0;">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Logout

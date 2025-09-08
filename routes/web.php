@@ -8,19 +8,17 @@ use App\Http\Controllers\ProjekTaskController;
 use App\Http\Controllers\DokumentasiController;
 
 Route::get('/', function () {
-    return view('login');
-});
+    return view('welcome');
+})->middleware('auth');
 
 
 Route::prefix('admin')->group(function () {
     Route::resource('projek', ProjekController::class);
     Route::resource('projek_task', ProjekTaskController::class);
-    Route::resource('dokumentasi', DokumentasiController::class); 
-});
+    Route::resource('dokumentasi', DokumentasiController::class);
+    Route::resource('anggota', UserController::class);
 
-Route::get('/welcome', function () {
-    return view('welcome');
-}) ->middleware('auth');
+});
 
 Route::get('/login',[LoginController::class,'index'])->name('login');
 
