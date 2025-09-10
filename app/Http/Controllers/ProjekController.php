@@ -57,6 +57,11 @@ class ProjekController extends Controller
         return redirect()->route('projek.index')->with('success', 'Projek berhasil diperbarui');
     }
 
+    public function show(String $id){
+        $projek = Projek::find($id);
+        return view('admin.projek.show', compact('projek'));
+    }
+
     public function destroy(Projek $projek)
     {
         $projek->delete();
