@@ -12,6 +12,7 @@ class Projek extends Model
     protected $table = 'projeks';
 
     protected $fillable = [
+        'projek_kategori_id',
         'name_projek',
         'deskripsi',
         'tanggal_mulai',
@@ -21,4 +22,9 @@ class Projek extends Model
         'prioritas',
         'status',
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(ProjekKategori::class, 'projek_kategori_id');
+    }
 }

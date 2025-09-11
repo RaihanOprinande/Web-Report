@@ -18,6 +18,15 @@
                         <input type="text" name="name_projek" class="form-control" required>
                     </div>
                     <div class="form-group">
+                        <label>Kategori Projek</label>
+                        <select name="projek_kategori_id" class="form-control">
+                            <option value="">Pilih Kategori</option>
+                            @foreach($kategoris as $kategori)
+                                <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>Client</label>
                         <input type="text" name="client" class="form-control" required>
                     </div>

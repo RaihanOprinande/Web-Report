@@ -40,7 +40,30 @@
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
+
 {{-- Ini adalah tempat untuk skrip khusus halaman --}}
 @stack('scripts')
+<script>
+    $('.owl-carousel').owlCarousel({
+  loop: true,
+  margin: 30,
+  nav: false,
+  dots: true, // Anda bisa ubah ke false jika tidak ingin ada titik navigasi
+  autoplay: true,
+  autoplayTimeout: 5000,
+  responsive: {
+    0: {
+      items: 1 // Tampilkan 1 item di layar sangat kecil
+    },
+    768: {
+      items: 2 // Tampilkan 2 item di layar tablet
+    },
+    992: {
+      items: 4 // Tampilkan 4 item di layar yang lebih besar
+    }
+  }
+});
+</script>
+
 </body>
 </html>
