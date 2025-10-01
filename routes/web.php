@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::prefix('admin')->group(function () {
+    Route::resource('user', UserController::class);
     Route::resource('projek', ProjekController::class);
     Route::resource('projek_kategori', ProjekKategoriController::class);
     Route::resource('projek_task', ProjekTaskController::class);
@@ -24,6 +25,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('anggota', UserController::class);
     Route::resource('kontak', KontakController::class);
     Route::resource('media_partner', MediaPartnerController::class);
+
 });
 
 Route::get('/home',[LandingController::class,'home'])->name('home');

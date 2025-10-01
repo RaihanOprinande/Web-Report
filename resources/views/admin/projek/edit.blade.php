@@ -11,7 +11,8 @@
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('projek.update', $projek->id) }}" method="POST">
+            <form action="{{ route('projek.update', $projek->id) }}" method="POST" enctype="multipart/form-data">
+
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -30,6 +31,13 @@
                 <div class="form-group">
                     <label>Client</label>
                     <input type="text" name="client" class="form-control" value="{{ $projek->client }}" required>
+                </div>
+                <div>
+                    <label>Thumbnail</label>
+                    <input type="file" name="thumbnail" class="form-control">
+                    @if($projek->thumbnail)
+                        <img src="{{ asset('storage/'.$projek->thumbnail) }}" width="120" class="mt-2">
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Tanggal Mulai</label>

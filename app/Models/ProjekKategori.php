@@ -10,7 +10,7 @@ class ProjekKategori extends Model
     use HasFactory;
 
     protected $table = 'projek_kategoris';
-    protected $fillable = ['nama_kategori', 'deskripsi'];
+    protected $fillable = ['nama_kategori', 'deskripsi', 'gambar'];
 
     public function projeks()
     {

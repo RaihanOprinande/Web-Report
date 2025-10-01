@@ -18,50 +18,70 @@ class UserController extends Controller
         return view('admin.user.create');
     }
 
-    public function store (Request $request){
-        try {
-            $validated = $request->validate([
+    public function store(Request $request){
+    try {
+        $validated = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:4|confirmed',
-            'role' => 'required'
+            'role' => 'required',
+            'posisi' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
-           $user =  User::create(
-            [
-                'name' => $validated['name'],
-                'email' => $validated['email'],
-                'role' => $validated['role'],
-                'password' => Hash::make($validated['password'])
-            ]
-        );
+
+        $photoPath = null;
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('users', 'public');
+        }
+
+        User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'role' => $validated['role'],
+            'posisi' => $validated['posisi'] ?? null,
+            'photo' => $photoPath,
+            'password' => Hash::make($validated['password'])
+        ]);
+
         return redirect('/admin/anggota')->with('success', 'Anggota berhasil ditambahkan.');
     } catch (\Exception $e) {
         return back()->with('error', $e->getMessage());
     }
 }
 
+
     public function edit(String $id){
             $user = User::find($id);
             return view('admin.user.update',compact('user'));
     }
 
-    public function update(Request $request, String $id){
-        try {
-            $user = User::findOrFail($id);
-            $validated = $request->validate([
-                'name' => 'string',
-                'role' => 'required'
-            ]);
-            $user->update([
+    public function update(Request $request, string $id){
+    try {
+        $user = User::findOrFail($id);
+        $validated = $request->validate([
+            'name' => 'string',
+            'role' => 'required',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        ]);
+
+        $photoPath = $user->photo;
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('users', 'public');
+        }
+
+        $user->update([
             'name' => $request->name,
             'email' => $request->email,
             'role' => $request->role,
+            'photo' => $photoPath,
         ]);
-            return redirect('/admin/anggota')->with('success','Anggota berhasil diubah');
-        } catch (\Exception $e) {
-            return back()->with('error', $e->getMessage());
-        }
+
+        return redirect('/admin/anggota')->with('success','Anggota berhasil diubah');
+    } catch (\Exception $e) {
+        return back()->with('error', $e->getMessage());
     }
+}
+
 
     public function destroy(string $id){
         User::destroy($id);

@@ -6,7 +6,7 @@
 
     <!--  Banner Section -->
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-      style="background-image: url(../assets/images/backgrounds/projects-banner.jpg);">
+      style="background-image: url(../assets/images/backgrounds/projek.jpg);">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
           <div class="row align-items-center">
@@ -33,137 +33,54 @@
 
     <!--  Project Section -->
     <section class="project py-5 py-lg-11 py-xl-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-7">
-            <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-              data-aos-duration="1000">
-              <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid w-100">
-                <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Amber Bottle</h3>
-                <div class="hstack gap-2">
-                  <span class="badge text-dark border">Photography</span>
-                  <span class="badge text-dark border">Studio</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-7">
-            <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200"
-              data-aos-duration="1000">
-              <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid w-100">
-                <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">BioTrack LIMS</h3>
-                <div class="hstack gap-2">
-                  <span class="badge text-dark border">Brand identity</span>
-                  <span class="badge text-dark border">Digital design</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-7">
-            <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="300"
-              data-aos-duration="1000">
-              <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-6.jpg" alt="" class="img-fluid w-100">
-                <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Digital Magazine</h3>
-                <div class="hstack gap-2">
-                  <span class="badge text-dark border">Digital design</span>
-                  <span class="badge text-dark border">Web development</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-7">
-            <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="400"
-              data-aos-duration="1000">
-              <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-3.jpg" alt="" class="img-fluid w-100">
-                <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Pixelforge</h3>
-                <div class="hstack gap-2">
-                  <span class="badge text-dark border">UI/UX design</span>
-                  <span class="badge text-dark border">Web development</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-7">
-            <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="500"
-              data-aos-duration="1000">
-              <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-1.jpg" alt="" class="img-fluid w-100">
-                <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Snapclear</h3>
-                <div class="hstack gap-2">
-                  <span class="badge text-dark border">UX Strategy</span>
-                  <span class="badge text-dark border">UI Design</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-7">
-            <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="600"
-              data-aos-duration="1000">
-              <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-2.jpg" alt="" class="img-fluid w-100">
-                <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Transfermax</h3>
-                <div class="hstack gap-2">
-                  <span class="badge text-dark border">Web development</span>
-                  <span class="badge text-dark border">Digital design</span>
-                </div>
+  <div class="container">
+    <div class="row">
+      @foreach($projek as $key => $item)
+        <div class="col-lg-6 mb-7">
+          <div class="portfolio d-flex flex-column gap-6"
+               data-aos="fade-up"
+               data-aos-delay="{{ ($key+1) * 100 }}"
+               data-aos-duration="1000">
+
+            <!-- Thumbnail -->
+<div class="portfolio-img position-relative overflow-hidden" style="height: 300px;">
+  @if($item->thumbnail)
+    <img src="{{ asset('storage/'.$item->thumbnail) }}"
+         alt="{{ $item->name_projek }}"
+         class="img-fluid w-100 h-100"
+         style="object-fit: cover; background: #f8f9fa;">
+  @else
+    <img src="{{ asset('assets/images/no-image.png') }}"
+         alt="no image"
+         class="img-fluid w-100 h-100"
+         style="object-fit: cover; background: #f8f9fa;">
+  @endif
+
+  <!-- Overlay Slide Down -->
+  <div class="portfolio-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+    <a href="{{ route('projek.show', $item->id) }}" class="btn btn-light btn-sm">
+      View Detail</a>
+  </div>
+</div>
+
+
+            <!-- Detail Projek -->
+            <div class="portfolio-details d-flex flex-column gap-3">
+              <h3 class="mb-0">{{ $item->name_projek }}</h3>
+              <div class="hstack gap-2">
+                @if($item->kategori)
+                  <span class="badge text-dark border">{{ $item->kategori->nama_kategori }}</span>
+                @endif
+                <span class="badge text-dark border">{{ ucfirst($item->status) }}</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      @endforeach
+    </div>
+  </div>
+</section>
+
 
   </div>
 

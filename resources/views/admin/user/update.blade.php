@@ -40,7 +40,7 @@
         {{-- MAIN --}}
         <div class="card shadow mb-4">
             <div class="card-body">
-                <form action="/admin/anggota/{{ $user->id }}" method="POST">
+                <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                     <div class="forms">
@@ -59,6 +59,13 @@
                                 <option value="0" {{ $user->role == '0' ? 'selected' : '' }}>Developer</option>
                                 <option value="1" {{ $user->role == '1' ? 'selected' : '' }}>Pimpinan</option>
                             </select>
+                        </div>
+                        <div class="mb-3">
+                        <label for="photo" class="form-label">Foto Profil</label>
+                        <input type="file" name="photo" id="photo" class="form-control">
+                        @if(!empty($user->photo))
+                            <img src="{{ asset('storage/'.$user->photo) }}" alt="Foto {{ $user->name }}" class="mt-2" style="width: 100px; height: auto;">
+                        @endif
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>

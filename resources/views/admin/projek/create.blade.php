@@ -11,7 +11,7 @@
 
         <div class="card shadow mb-4">
             <div class="card-body">
-                <form action="{{ route('projek.store') }}" method="POST">
+                <form action="{{ route('projek.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Nama Projek</label>
@@ -29,6 +29,10 @@
                     <div class="form-group">
                         <label>Client</label>
                         <input type="text" name="client" class="form-control" required>
+                    </div>
+                    <div>
+                        <label>Thumbnail</label>
+                        <input type="file" name="thumbnail" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Tanggal Mulai</label>

@@ -69,6 +69,7 @@
                                 {{-- <th>No</th> --}}
                                 <th>Nama Projek</th>
                                 <th>Client</th>
+                                <th>Thumbnail</th>
                                 {{-- <th>Tgl Mulai</th> --}}
                                 {{-- <th>Tgl Selesai</th> --}}
                                 <th>Deadline</th>
@@ -83,6 +84,13 @@
                                     {{-- <td>{{ $loop->iteration }}</td> --}}
                                     <td>{{ $p->name_projek }}</td>
                                     <td>{{ $p->client }}</td>
+                                    <td>
+                                        @if($p->thumbnail)
+                                        <img src="{{ asset('storage/'.$p->thumbnail) }}" width="120" class="mb-2">
+                                        @else
+                                        <span>-</span>
+                                        @endif
+                                    </td>
                                     {{-- <td>{{ $p->tanggal_mulai }}</td> --}}
                                     {{-- <td>{{ $p->tanggal_selesai ?? '-' }}</td> --}}
                                     <td>{{ $p->deadline }}</td>

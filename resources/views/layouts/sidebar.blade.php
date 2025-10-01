@@ -24,27 +24,45 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Projek
+                Menu
             </div>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/projek">
-                    <i class="bi bi-gear-fill"></i>
-                    <span>Projek</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/dokumentasi">
-                    <i class="bi bi-image"></i>
-                    <span>Dokumentasi</span></a>
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseProjek"
+                    aria-expanded="true" aria-controls="collapseProjek">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Projek</span>
+                </a>
+                <div id="collapseProjek" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/admin/projek">Projek</a>
+                        <a class="collapse-item" href="/admin/projek_task">Task</a>
+                        <a class="collapse-item" href="/admin/dokumentasi">Dokumentasi</a>
+                        <a class="collapse-item" href="/admin/projek_kategori">Kategori</a>
+                    </div>
+                </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseOther"
+                    aria-expanded="true" aria-controls="collapseOther">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Menu Lain</span>
+                </a>
+                <div id="collapseOther" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/admin/kontak">Kontak</a>
+                        <a class="collapse-item" href="/admin/media_partner">Media Partner</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Anggota
+                Pengguna
             </div>
 
             <!-- Nav Item - Charts -->
@@ -53,6 +71,8 @@
                     <i class="bi bi-people-fill"></i>
                     <span>Anggota</span></a>
             </li>
+
+
 
 
             <!-- Divider -->

@@ -12,6 +12,24 @@
 <link rel="stylesheet" href="{{ asset('assets/libs/aos-master/dist/aos.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
 
+<style>
+    .logo .logo-white .logo-text {
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .logo .logo-dark .logo-text {
+      color: #212529;
+      font-size: 36px;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+    }
+
+    
+
+  </style>
 {{-- Ini adalah tempat untuk CSS khusus halaman --}}
 @stack('styles')
 </head>
@@ -63,6 +81,25 @@
     }
   }
 });
+
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      loop:true,
+      margin:20,
+      autoplay:true,
+      autoplayTimeout:2000,
+      autoplayHoverPause:true,
+      responsive:{
+        0:{ items:2 },
+        576:{ items:3 },
+        768:{ items:4 },
+        1200:{ items:6 }
+      }
+    });
+    });
+
+
+
 </script>
 
 </body>

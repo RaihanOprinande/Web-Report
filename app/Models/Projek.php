@@ -21,6 +21,7 @@ class Projek extends Model
         'client',
         'prioritas',
         'status',
+        'thumbnail',
     ];
 
     public function kategori()
