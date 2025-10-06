@@ -12,7 +12,7 @@
             <div class="col-xl-4">
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                <img src="../assets/images/svgs/secondary-leaf.svg" alt="" class="img-fluid animate-spin">
                 <p class="mb-0 text-white fs-5 text-opacity-70">We craft <span class="text-primary">innovative
                     digital</span> designs that amplify brand identity and drive meaningful results</p>
               </div>
@@ -324,11 +324,13 @@
     <section class="meet-our-team py-5 py-lg-11 py-xl-12">
     <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
+            {{-- Bagian judul --}}
             <div class="row gap-7 gap-xl-0">
                 <div class="col-xl-4 col-xxl-4">
-                    <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-                        data-aos-duration="1000">
-                        <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
+                    <div class="d-flex align-items-center gap-7 py-2"
+                        data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                        <span
+                            class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
                         <hr class="border-line bg-white">
                         <span class="badge text-bg-dark">The team</span>
                     </div>
@@ -336,11 +338,12 @@
                 <div class="col-xl-8 col-xxl-7">
                     <div class="row">
                         <div class="col-xxl-8">
-                            <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                                data-aos-duration="1000">
+                            <div class="d-flex flex-column gap-6"
+                                data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                                 <h2 class="mb-0">Meet our team</h2>
                                 <p class="fs-5 mb-0 text-opacity-70">
-                                    This is our team, and we are ready to connect big ideas with future technology.
+                                    Our team is committed to redefining digital experiences through
+                                    innovative web solutions while fostering a diverse and collaborative environment.
                                 </p>
                             </div>
                         </div>
@@ -348,53 +351,92 @@
                 </div>
             </div>
 
-            {{-- Looping user --}}
-            <div class="meet-our-team-slider px-3">
-                <div class="owl-carousel owl-theme">
-                    @foreach($users as $index => $user)
-                        <div class="item">
-                            <div class="meet-team d-flex flex-column gap-4"
-                                data-aos="fade-up"
-                                data-aos-delay="{{ ($index+1) * 100 }}"
-                                data-aos-duration="1000">
+            {{-- Grid tim dinamis --}}
+            <div class="row">
+                @foreach($users as $index => $user)
+                    <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                        <div class="meet-team d-flex flex-column gap-4"
+                            data-aos="fade-up"
+                            data-aos-delay="{{ ($index+1) * 100 }}"
+                            data-aos-duration="1000">
 
-                                <div class="meet-team-img position-relative overflow-hidden">
-                                    {{-- Kalau ada field foto, tampilkan --}}
-                                    @if(!empty($user->photo))
-                                        <img src="{{ asset('storage/' . $user->photo) }}" alt="team-img" class="img-fluid w-100">
-                                    @else
-                                        <img src="{{ asset('assets/images/team/default.jpg') }}" alt="team-img" class="img-fluid w-100">
-                                    @endif
+                            {{-- Gambar tim --}}
+                            <div class="meet-team-img position-relative overflow-hidden rounded-4">
+                                @if(!empty($user->photo))
+                                    <img src="{{ asset('storage/' . $user->photo) }}" alt="{{ $user->name }}"
+                                         class="img-fluid w-100 h-100" style="object-fit: cover; aspect-ratio: 4/5;">
+                                @else
+                                    <img src="{{ asset('assets/images/team/default.jpg') }}" alt="team-img"
+                                         class="img-fluid w-100 h-100" style="object-fit: cover; aspect-ratio: 4/5;">
+                                @endif
 
-                                    <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
-                                        <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
-                                            <li><a href="#!" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
-                                                <img src="{{ asset('assets/images/svgs/icon-twitter.svg') }}" alt="twitter"></a></li>
-                                            <li><a href="#!" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
-                                                <img src="{{ asset('assets/images/svgs/icon-be.svg') }}" alt="be"></a></li>
-                                            <li><a href="#!" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
-                                                <img src="{{ asset('assets/images/svgs/icon-linkedin.svg') }}" alt="linkedin"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="meet-team-details">
-                                    <h4 class="mb-0">{{ $user->name }}</h4>
-                                    <p class="mb-0"> @if ($user->role == 1)
-                                            Pimpinan
-                                        @else
-                                            Developer
-                                        @endif</p>
-
+                                {{-- Overlay sosmed --}}
+                                <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end"
+                                    style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0)); transition: 0.3s;">
+                                    <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
+                                        <li>
+                                            <a href="#!"
+                                               class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
+                                                <img src="{{ asset('assets/images/svgs/icon-twitter.svg') }}" alt="twitter">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#!"
+                                               class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
+                                                <img src="{{ asset('assets/images/svgs/icon-be.svg') }}" alt="be">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#!"
+                                               class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
+                                                <img src="{{ asset('assets/images/svgs/icon-linkedin.svg') }}" alt="linkedin">
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
+                            {{-- Detail tim --}}
+                            <div class="meet-team-details text-center">
+                                <h4 class="mb-2">{{ $user->name }}</h4>
+                                <p class="mb-4">
+                                    @if ($user->role == 1)
+                                        Leader
+                                    @else
+                                        Developer
+                                    @endif
+                                </p>
+                            </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
 
         </div>
     </div>
-</section>>
+</section>
+
+<style>
+.meet-team-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.meet-team-img img {
+    transition: transform 0.4s ease;
+}
+.meet-team-img:hover img {
+    transform: scale(1.05);
+}
+.meet-team-overlay {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+.meet-team-img:hover .meet-team-overlay {
+    opacity: 1;
+}
+</style>
+
 
 @endsection

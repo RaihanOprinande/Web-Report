@@ -16,4 +16,6 @@ class ProjekKategori extends Model
     {
         return $this->hasMany(Projek::class, 'projek_kategori_id');
     }
+
+    
 }

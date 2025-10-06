@@ -13,7 +13,7 @@
             <div class="col-xl-4">
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                <img src="../assets/images/svgs/secondary-leaf.svg" alt="" class="img-fluid animate-spin">
                 <p class="mb-0 text-white fs-5 text-opacity-70">Ready to <span class="text-primary">start
                     something</span> great? Reach out we’d love to hear from you.</p>
               </div>
@@ -46,15 +46,16 @@
                             </div>
                             <h2 class="mb-0">Let's get in touch</h2>
                             <p class="mb-0 fs-5 text-dark">
-                                Ready to start your project? We're here to help. Reach out to us through our social channels or email.
+                                Ready to start your project? We're here to help. Reach out to us through our social media.
                             </p>
                             <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-center">
                                 <li><a href="https://www.facebook.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:facebook" class="fs-7 text-white"></iconify-icon></a></li>
                                 <li><a href="https://www.twitter.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:twitter" class="fs-7 text-white"></iconify-icon></a></li>
-                                <li><a href="https://www.instagram.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:instagram" class="fs-7 text-white"></iconify-icon></a></li>
-                                <li><a href="mailto:contact@studiova.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:mail" class="fs-7 text-white"></iconify-icon></a></li>
+                                <li><a href="https://www.instagram.com/hydtech.official/" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:instagram" class="fs-7 text-white"></iconify-icon></a></li>
+                                <li><a href="https://www.linkedin.com/in/teamhydtech/" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:linkedin" class="fs-7 text-white"></a></li>
+                                <li><a href="mailto:teamhydetech@gmail.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:mail" class="fs-7 text-white"></iconify-icon></a></li>
                             </ul>
-                            <a href="mailto:contact@studiova.com" class="btn btn-primary w-100 justify-content-center mt-3">
+                            <a href="mailto:teamhydetech@gmail.com"" class="btn btn-primary w-100 justify-content-center mt-3">
                                 <span class="btn-text">Email Us</span>
                                 <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                             </a>

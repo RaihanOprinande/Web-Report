@@ -63,7 +63,7 @@
                         <label for="">Peran</label>
                         <select name="role" class="form-control select2 js-example-basic-single" required>
                             <option value="0">Developer</option>
-                            <option value="1">Pimpinan</option>
+                            <option value="1">Leader</option>
                         </select>
                         <div class="mb-3">
                         <label for="photo" class="form-label">Foto Profil</label>

@@ -28,4 +28,14 @@ class Projek extends Model
     {
         return $this->belongsTo(ProjekKategori::class, 'projek_kategori_id');
     }
+
+    public function tasks()
+{
+    return $this->hasMany(ProjekTask::class, 'projek_id');
+}
+
+public function dokumentasi()
+{
+    return $this->hasMany(Dokumentasi::class, 'projek_id');
+}
 }

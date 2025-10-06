@@ -57,7 +57,7 @@
                             <label for="">Peran</label>
                             <select name="role" class="form-control select2 js-example-basic-single" required>
                                 <option value="0" {{ $user->role == '0' ? 'selected' : '' }}>Developer</option>
-                                <option value="1" {{ $user->role == '1' ? 'selected' : '' }}>Pimpinan</option>
+                                <option value="1" {{ $user->role == '1' ? 'selected' : '' }}>Leader</option>
                             </select>
                         </div>
                         <div class="mb-3">

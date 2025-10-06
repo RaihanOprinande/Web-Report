@@ -55,15 +55,15 @@
             </a>
           </li>
         </ul>
-        <div class="hstack gap-3 justify-content-center">
+        {{-- <div class="hstack gap-3 justify-content-center">
           <a href="{{ route('login') }}"
             class="btn btn-dark text-white fs-6 bg-dark px-3 py-2 w-50 hstack justify-content-center">Login</a>
-        </div>
+        </div> --}}
       </div>
-      <div>
-        <a class="text-dark" href="tel:+62812-7564-5952">+62812-7564-5952</a>
+      {{-- <div>
+        <a class="text-dark" href=""https://www.instagram.com/hydtech.official/">@hydtech.official</a>
         <a class="fs-8 text-dark fw-bold" href="mailto:teamhydtech@gmail.com">teamhydtech@gmail.com</a>
-      </div>
+      </div> --}}
     </div>
   </ul>
 </div>

@@ -7,11 +7,11 @@
                     <div class="d-flex flex-column gap-2 align-items-center">
                         <a href="mailto:info@wrappixel.com" class="link-hover hstack gap-3 text-white fs-5 w-100 justify-content-center">
                             <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
-                            info@wrappixel.com
+                            teamhydetech@gmail.com
                         </a>
                         <a href="http://maps.google.com/maps?q=Your%20Address" target="_blank" class="link-hover hstack gap-3 text-white fs-5 w-100 justify-content-center">
                             <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
-                            Your Full Address, City, Country
+                            Padang, Sumatera Barat, Indonesia
                         </a>
                     </div>
                 </div>

@@ -40,7 +40,7 @@
               <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
                 data-aos-duration="1000">
                 <span
-                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">04</span>
+                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">01</span>
                 <hr class="border-line">
                 <span class="badge text-bg-dark">About us</span>
               </div>
@@ -164,75 +164,81 @@
 
     <!-- Featured Projects Section -->
 <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
-  <div class="d-flex flex-column gap-5 gap-xl-11">
-    <div class="container">
+  <div class="container">
+    <div class="d-flex flex-column gap-5 gap-xl-11">
       <div class="row gap-7 gap-xl-0">
         <div class="col-xl-4 col-xxl-4">
-          <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-            data-aos-duration="1000">
-            <span
-              class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">02</span>
-            <hr class="border-line">
+          <div class="d-flex align-items-center gap-7 py-2"
+            data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+            <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">02</span>
+            <hr class="border-line bg-white">
             <span class="badge text-bg-dark">Projects</span>
           </div>
         </div>
         <div class="col-xl-8 col-xxl-7">
           <div class="row">
             <div class="col-xxl-8">
-              <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                data-aos-duration="1000">
-                <h2 class="mb-0">Projeks</h2>
-                <p class="fs-5 mb-0">
-                  A glimpse into our projects—exploring successful technology and artificial intelligence, and transformative digital experiences.
+              <div class="d-flex flex-column gap-6"
+                data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <h2 class="mb-0">Our Projects</h2>
+                <p class="fs-5 mb-0 text-opacity-70">
+                  Explore our landscape-style portfolio — crafted for modern technology and creative excellence.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="featured-projects-slider px-3">
-  <div class="owl-carousel owl-theme">
-    @foreach($projek as $item)
-      <div class="item">
-        <div class="portfolio d-flex flex-column gap-6">
-          <div class="portfolio-img position-relative overflow-hidden">
-            @if($item->thumbnail)
-                <img src="{{ asset('storage/'.$item->thumbnail) }}"
-                    alt="{{ $item->name_projek }}"
-                    class="img-fluid w-100"
-                    style="object-fit: contain; max-height: 300px; background: #f8f9fa;">
-                @else
-                <img src="{{ asset('assets/images/no-image.png') }}"
-                    alt="no image"
-                    class="img-fluid w-100"
-                    style="object-fit: contain; max-height: 300px; background: #f8f9fa;">
-                @endif
+      {{-- Slider Projek --}}
+      <div class="featured-projects-slider px-3">
+        <div class="owl-carousel owl-theme">
+          @foreach($projek as $index => $item)
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-3"
+                data-aos="fade-up"
+                data-aos-delay="{{ ($index+1) * 100 }}"
+                data-aos-duration="1000">
 
-            <div class="portfolio-overlay">
-              <a href="{{ route('projek.show', $item->id) }}"
-                class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-              </a>
+                {{-- Rasio Landscape (16:9) --}}
+                <div class="portfolio-img position-relative overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 16 / 9;">
+                  @if($item->thumbnail)
+                    <img src="{{ asset('storage/'.$item->thumbnail) }}"
+                      alt="{{ $item->name_projek }}"
+                      class="img-fluid w-100 h-100"
+                      style="object-fit: cover;">
+                  @else
+                    <img src="{{ asset('assets/images/no-image.png') }}"
+                      alt="no image"
+                      class="img-fluid w-100 h-100"
+                      style="object-fit: cover;">
+                  @endif
+
+                  <div class="portfolio-overlay p-6 d-flex flex-column justify-content-end">
+                    <a href="{{ route('detailProjek', $item->id) }}"
+                      class="btn bg-primary p-2 round-45 rounded-circle hstack justify-content-center align-self-end shadow">
+                      <iconify-icon icon="lucide:arrow-up-right" class="fs-6 text-dark"></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="portfolio-details text-center">
+                  <h4 class="mb-1 ">{{ $item->name_projek }}</h4>
+                  <div class="hstack gap-2 justify-content-center">
+                    @if($item->kategori)
+                      <span class="badge text-bg-dark">{{ $item->kategori->nama_kategori }}</span>
+                    @endif
+                    <span class="badge text-bg-dark">{{ ucfirst($item->client) }}</span>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
-          <div class="portfolio-details d-flex flex-column gap-3">
-            <h3 class="mb-0">{{ $item->name_projek }}</h3>
-            <div class="hstack gap-2">
-              @if($item->kategori)
-                <span class="badge text-dark border">{{ $item->kategori->nama_kategori }}</span>
-              @endif
-              <span class="badge text-dark border">{{ ucfirst($item->client) }}</span>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
-    @endforeach
-  </div>
-</div>
 
-
+    </div>
   </div>
 </section>
 
@@ -330,7 +336,6 @@
   </div>
 </section>
 
-
 <!--  Meet our team Section -->
     <section class="meet-our-team py-5 py-lg-11 py-xl-12">
     <div class="container">
@@ -339,7 +344,7 @@
                 <div class="col-xl-4 col-xxl-4">
                     <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
                         data-aos-duration="1000">
-                        <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
+                        <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">04</span>
                         <hr class="border-line bg-white">
                         <span class="badge text-bg-dark">The team</span>
                     </div>
@@ -379,12 +384,8 @@
 
                                     <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
                                         <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
-                                            <li><a href="#!" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
-                                                <img src="{{ asset('assets/images/svgs/icon-twitter.svg') }}" alt="twitter"></a></li>
-                                            <li><a href="#!" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
-                                                <img src="{{ asset('assets/images/svgs/icon-be.svg') }}" alt="be"></a></li>
-                                            <li><a href="#!" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center">
-                                                <img src="{{ asset('assets/images/svgs/icon-linkedin.svg') }}" alt="linkedin"></a></li>
+                                           <li><a href="https://www.linkedin.com/in/teamhydtech/" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:linkedin" class="fs-7 text-gray"></a></li>
+                                            <li><a href="https://www.instagram.com/hydtech.official/" class="btn bg-white p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:instagram" class="fs-7 text-gray"></iconify-icon></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -392,7 +393,7 @@
                                 <div class="meet-team-details">
                                     <h4 class="mb-0">{{ $user->name }}</h4>
                                     <p class="mb-0"> @if ($user->role == 1)
-                                            Pimpinan
+                                            Leader
                                         @else
                                             Developer
                                         @endif</p>
@@ -408,7 +409,6 @@
     </div>
 </section>
 
-
 <!--  Pricing Section -->
     <section class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray">
       <div class="container">
@@ -419,9 +419,9 @@
                 <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
                   data-aos-duration="2000">
                   <span
-                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">07</span>
+                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">05</span>
                   <hr class="border-line bg-white">
-                  <span class="badge text-bg-dark">Pricing</span>
+                  <span class="badge text-bg-dark">Clients</span>
                 </div>
               </div>
               <div class="col-xl-8 col-xxl-7">
@@ -429,7 +429,7 @@
                   <div class="col-xxl-8">
                     <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                       data-aos-duration="1000">
-                      <h2 class="mb-0">Affordable pricing</h2>
+                      <h2 class="mb-0">Partners and Clients</h2>
                       <p class="fs-5 mb-0 text-opacity-70">A glimpse into our creativity—exploring innovative designs,
                         successful collaborations, and transformative digital experiences.</p>
                     </div>
@@ -477,21 +477,22 @@
                     <div class="card-body text-center">
                         <div class="d-flex flex-column gap-6 align-items-center">
                             <div class="d-flex align-items-center gap-7 py-2">
-                                <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">08</span>
+                                <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
                                 <hr class="border-line">
                                 <span class="badge text-bg-dark">Contact</span>
                             </div>
                             <h2 class="mb-0">Let's get in touch</h2>
                             <p class="mb-0 fs-5 text-dark">
-                                Ready to start your project? We're here to help. Reach out to us through our social channels or email.
+                                Ready to start your project? We're here to help. Reach out to us through our social media.
                             </p>
-                            <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-center">
+                             <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-center">
                                 <li><a href="https://www.facebook.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:facebook" class="fs-7 text-white"></iconify-icon></a></li>
                                 <li><a href="https://www.twitter.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:twitter" class="fs-7 text-white"></iconify-icon></a></li>
-                                <li><a href="https://www.instagram.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:instagram" class="fs-7 text-white"></iconify-icon></a></li>
-                                <li><a href="mailto:contact@studiova.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:mail" class="fs-7 text-white"></iconify-icon></a></li>
+                                <li><a href="https://www.instagram.com/hydtech.official/" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:instagram" class="fs-7 text-white"></iconify-icon></a></li>
+                                <li><a href="https://www.linkedin.com/in/teamhydtech/" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:linkedin" class="fs-7 text-white"></a></li>
+                                <li><a href="mailto:teamhydetech@gmail.com" class="btn bg-dark-gray p-2 round-45 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:mail" class="fs-7 text-white"></iconify-icon></a></li>
                             </ul>
-                            <a href="mailto:contact@studiova.com" class="btn border border-white w-100 justify-content-center mt-3">
+                            <a href="mailto:teamhydetech@gmail.com"" class="btn btn-primary w-100 justify-content-center mt-3">
                                 <span class="btn-text">Email Us</span>
                                 <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                             </a>

@@ -13,7 +13,7 @@
             <div class="col-xl-4">
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                <img src="../assets/images/svgs/secondary-leaf.svg" alt="" class="img-fluid animate-spin">
                 <p class="mb-0 text-white fs-5 text-opacity-70">A <span class="text-primary">showcase of
                     creativity</span>, strategy, and results explore the projects that define us.</p>
               </div>
@@ -58,7 +58,7 @@
 
   <!-- Overlay Slide Down -->
   <div class="portfolio-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
-    <a href="{{ route('projek.show', $item->id) }}" class="btn btn-light btn-sm">
+    <a href="{{ route('detailProjek', $item->id) }}" class="btn btn-light btn-sm">
       View Detail</a>
   </div>
 </div>
@@ -71,7 +71,7 @@
                 @if($item->kategori)
                   <span class="badge text-dark border">{{ $item->kategori->nama_kategori }}</span>
                 @endif
-                <span class="badge text-dark border">{{ ucfirst($item->status) }}</span>
+                <span class="badge text-dark border">{{ ucfirst($item->client) }}</span>
               </div>
             </div>
           </div>
