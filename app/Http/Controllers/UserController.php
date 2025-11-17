@@ -26,7 +26,7 @@ class UserController extends Controller
             'password' => 'required|min:4|confirmed',
             'role' => 'required',
             'posisi' => 'nullable|string|max:255',
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:10000'
         ]);
 
         $photoPath = null;
@@ -61,7 +61,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'string',
             'role' => 'required',
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:10000'
         ]);
 
         $photoPath = $user->photo;
@@ -81,6 +81,13 @@ class UserController extends Controller
         return back()->with('error', $e->getMessage());
     }
 }
+
+public function show(string $id)
+{
+    $user = User::findOrFail($id);
+    return view('admin.user.show', compact('user'));
+}
+
 
 
     public function destroy(string $id){

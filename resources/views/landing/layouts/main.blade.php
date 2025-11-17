@@ -4,15 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>@yield('title', 'Studiova')</title>
+<title>@yield('title', 'Hydtech')</title>
 
 {{-- Link CSS dari template Anda --}}
-<link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.svg') }}" />
+<link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo-remove.png" />
 <link rel="stylesheet" href="{{ asset('assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/libs/aos-master/dist/aos.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
 
 <style>
+    .logo-icon {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* batas ukuran maksimum (agar tidak terlalu besar) */
+    max-height: 40px;
+}
+
     .logo .logo-white .logo-text {
       color: white;
       font-size: 36px;
@@ -27,7 +35,7 @@
       font-family: "Poppins", sans-serif;
     }
 
-    
+
 
   </style>
 {{-- Ini adalah tempat untuk CSS khusus halaman --}}

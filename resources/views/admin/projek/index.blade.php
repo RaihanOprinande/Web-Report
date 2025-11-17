@@ -66,7 +66,7 @@
                     <table class="table " id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                {{-- <th>No</th> --}}
+                                <th>No</th>
                                 <th>Nama Projek</th>
                                 <th>Client</th>
                                 <th>Thumbnail</th>
@@ -81,7 +81,7 @@
                         <tbody>
                             @forelse($projek as $p)
                                 <tr>
-                                    {{-- <td>{{ $loop->iteration }}</td> --}}
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $p->name_projek }}</td>
                                     <td>{{ $p->client }}</td>
                                     <td>
@@ -101,7 +101,7 @@
                                         @elseif($p->prioritas == 'sedang')
                                             <span class="badge bg-warning text-dark">{{ ucfirst($p->prioritas) }}</span>
                                         @else
-                                            <span class="badge bg-primary">{{ ucfirst($p->prioritas) }}</span>
+                                            <span class="badge bg-primary text-white">{{ ucfirst($p->prioritas) }}</span>
                                         @endif
                                     </td>
                                     {{-- END PRIORITAs --}}
@@ -114,11 +114,14 @@
                                             <span
                                                 class="badge badge-kuning bg-warning text-white">{{ ucfirst($p->status) }}</span>
                                         @elseif($p->status == 'selesai')
-                                            <span class="badge bg-success text-success">{{ ucfirst($p->status) }}</span>
+                                            <span class="badge bg-success text-white">{{ ucfirst($p->status) }}</span>
                                         @endif
                                     </td>
                                     {{-- END STATUS --}}
                                     <td>
+                                        <a href="/admin/projek/{{ $p->id }}" class="btn btn-detail btn-sm">
+                                            <i class="bi bi-gear-wide-connected"></i>
+                                        </a>
                                         <a href="{{ route('projek.edit', $p->id) }}" class="btn btn-edit btn-sm">
                                             <i class="fas fa-edit"></i>
                                         </a>
@@ -131,9 +134,7 @@
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
-                                        <a href="/admin/projek/{{ $p->id }}" class="btn btn-detail btn-sm">
-                                            <i class="bi bi-gear-wide-connected"></i>
-                                        </a>
+
                                     </td>
                                 </tr>
                             @empty

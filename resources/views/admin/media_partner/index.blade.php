@@ -3,50 +3,127 @@
 @section('title', 'Daftar Media Partner')
 
 @section('content')
-<div class="container">
-    <h2>Daftar Media Partner</h2>
-    <a href="{{ route('media_partner.create') }}" class="btn btn-primary mb-3">+ Tambah Media Partner</a>
+    <style>
+        .btn-edit {
+            color: #4e73df;
+        }
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+        .btn-edit:hover {
+            background-color: #ffc107;
+            color: white;
+        }
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>Logo</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($mediaPartners as $mp)
-            <tr>
-                <td>{{ $mp->id }}</td>
-                <td>{{ $mp->nama }}</td>
-                <td>
-                    @if($mp->logo)
-                        <img src="{{ asset('storage/'.$mp->logo) }}" width="100">
-                    @else
-                        <span class="text-muted">Belum ada logo</span>
-                    @endif
-                </td>
-                <td>
-                    <a href="{{ route('media_partner.edit', $mp->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                    <form action="{{ route('media_partner.destroy', $mp->id) }}" method="POST" style="display:inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus media partner ini?')">Hapus</button>
-                    </form>
-                </td>
-            </tr>
-            @empty
-            <tr>
-                <td colspan="4" class="text-center">Belum ada media partner</td>
-            </tr>
-            @endforelse
-        </tbody>
-    </table>
-</div>
+        .btn-hapus {
+            color: #4e73df;
+        }
+
+        .btn-hapus:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .img-preview {
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        .img-preview:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+
+    <div class="bungkus">
+
+        {{-- HEADER --}}
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Daftar Media Partner</h1>
+
+            <a href="{{ route('media_partner.create') }}" class="btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Media Partner
+            </a>
+        </div>
+
+        {{-- TABLE CARD --}}
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tabel Media Partner</h6>
+            </div>
+
+            <div class="card-body">
+
+                {{-- ALERT SUCCESS --}}
+                @if (session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                <div class="table-responsive">
+                    <table class="table" id="dataTable" width="100%">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Logo</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach ($mediaPartners as $mp)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $mp->nama }}</td>
+
+                                    <td>
+                                        @if ($mp->logo)
+                                            <img src="{{ asset('storage/' . $mp->logo) }}" width="110" class="img-preview" alt="Logo Media Partner">
+                                        @else
+                                            <span class="text-muted">Belum ada logo</span>
+                                        @endif
+                                    </td>
+
+                                    <td>
+                                        {{-- EDIT --}}
+                                        <a href="{{ route('media_partner.edit', $mp->id) }}" class="btn btn-edit btn-sm">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+
+                                        {{-- DELETE --}}
+                                        <form action="{{ route('media_partner.destroy', $mp->id) }}"
+                                              method="POST"
+                                              style="display:inline-block">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="btn btn-hapus btn-sm"
+                                                onclick="return confirm('Yakin ingin menghapus media partner ini?')">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            @endforeach
+
+                            @if ($mediaPartners->isEmpty())
+                                <tr>
+                                    <td colspan="4" class="text-center">Belum ada media partner</td>
+                                </tr>
+                            @endif
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 @endsection
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>
+@endpush

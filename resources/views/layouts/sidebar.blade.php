@@ -3,24 +3,42 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Hydtech</div>
-            </a>
+    <div class="sidebar-brand-icon">
+        <img src="/assets/images/logos/logo-remove.png" alt="Hydtech" class="sidebar-logo">
+    </div>
+    <div class="sidebar-brand-text mx-3">Hydtech</div>
+</a>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+             <!-- Heading -->
+            <div class="sidebar-heading">
+                Pengguna
+            </div>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/anggota">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Anggota</span></a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -46,8 +64,8 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseOther"
                     aria-expanded="true" aria-controls="collapseOther">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Menu Lain</span>
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Setting</span>
                 </a>
                 <div id="collapseOther" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -57,26 +75,10 @@
                 </div>
             </li>
 
+
+
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Pengguna
-            </div>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/anggota">
-                    <i class="bi bi-people-fill"></i>
-                    <span>Anggota</span></a>
-            </li>
-
-
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

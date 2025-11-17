@@ -10,13 +10,11 @@ use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\MediaPartnerController;
-
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth');
+use App\Http\Controllers\DashboardController;
 
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('dashboard', DashboardController::class);
     Route::resource('user', UserController::class);
     Route::resource('projek', ProjekController::class);
     Route::resource('projek_kategori', ProjekKategoriController::class);
@@ -25,10 +23,10 @@ Route::prefix('admin')->group(function () {
     Route::resource('anggota', UserController::class);
     Route::resource('kontak', KontakController::class);
     Route::resource('media_partner', MediaPartnerController::class);
-
 });
 
-Route::get('/home',[LandingController::class,'home'])->name('home');
+
+Route::get('',[LandingController::class,'home'])->name('home');
 Route::get('/tentang',[LandingController::class,'tentang'])->name('tentang');
 Route::get('/projek',[LandingController::class,'projek'])->name('projek');
 Route::get('/detail-projek/{id}', [LandingController::class, 'detailProjek'])->name('detailProjek');

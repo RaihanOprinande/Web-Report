@@ -3,28 +3,71 @@
 @section('title', 'Tambah Kontak')
 
 @section('content')
-<div class="container">
-    <h2>Tambah Kontak</h2>
 
-    <form action="{{ route('kontak.store') }}" method="POST">
-        @csrf
-        <div class="mb-3">
-            <label class="form-label">Platform</label>
-            <input type="text" name="platform" class="form-control" required>
+<style>
+    .btn-kembali {
+        color: #4e73df;
+    }
+    .btn-kembali:hover {
+        background-color: #4e73df;
+        color: white;
+    }
+</style>
+
+<div class="bungkus">
+
+    {{-- Header --}}
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Tambah Kontak</h1>
+        <a href="{{ route('kontak.index') }}" class="btn btn-secondary btn-sm">
+            <i class="fas fa-arrow-left fa-sm text-white-50"></i> Kembali
+        </a>
+    </div>
+
+    <div class="card shadow mb-4">
+
+        {{-- Card Header --}}
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Kontak</h6>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" required>
-        </div>
+        {{-- Card Body --}}
+        <div class="card-body">
 
-        <div class="mb-3">
-            <label class="form-label">Link</label>
-            <textarea name="link" class="form-control" required></textarea>
-        </div>
+            <form action="{{ route('kontak.store') }}" method="POST">
+                @csrf
 
-        <button type="submit" class="btn btn-success">Simpan</button>
-        <a href="{{ route('kontak.index') }}" class="btn btn-secondary">Batal</a>
-    </form>
+                <div class="row">
+
+                    {{-- Platform --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Platform</label>
+                        <input type="text" name="platform" class="form-control" required>
+                    </div>
+
+                    {{-- Nama --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Nama</label>
+                        <input type="text" name="nama" class="form-control" required>
+                    </div>
+
+                    {{-- Link --}}
+                    <div class="col-md-12 mb-3">
+                        <label class="font-weight-bold">Link</label>
+                        <textarea name="link" class="form-control" rows="3" required></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-save"></i> Simpan Kontak
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
 </div>
+
 @endsection

@@ -1,14 +1,18 @@
 <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
     <div class="container">
       <div class="header-wrapper d-flex align-items-center justify-content-between">
-        <div class="logo">
-  <a href="{{ route('home') }}" class="logo-white">
-    <span class="logo-text">Hydtech</span>
-  </a>
-  <a href="{{ route('home') }}" class="logo-dark">
-    <span class="logo-text">Hydtech</span>
-  </a>
+        <div class="logo d-flex align-items-center gap-2">
+    <img src="/assets/images/logos/logo-remove.png" alt="Hydtech" class="logo-icon">
+
+    <a href="{{ route('home') }}" class="logo-white">
+        <span class="logo-text">Hydtech</span>
+    </a>
+
+    <a href="{{ route('home') }}" class="logo-dark">
+        <span class="logo-text">Hydtech</span>
+    </a>
 </div>
+
 
         <div class="d-flex align-items-center gap-4">
 
@@ -55,10 +59,10 @@
             </a>
           </li>
         </ul>
-        {{-- <div class="hstack gap-3 justify-content-center">
+        <div class="hstack gap-3 justify-content-center">
           <a href="{{ route('login') }}"
             class="btn btn-dark text-white fs-6 bg-dark px-3 py-2 w-50 hstack justify-content-center">Login</a>
-        </div> --}}
+        </div>
       </div>
       {{-- <div>
         <a class="text-dark" href=""https://www.instagram.com/hydtech.official/">@hydtech.official</a>

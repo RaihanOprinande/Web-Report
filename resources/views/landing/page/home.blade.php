@@ -1,6 +1,6 @@
 @extends('landing.layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Hydtech')
 @section('content')
 
 <!--  Banner Section -->
@@ -44,120 +44,22 @@
                 <hr class="border-line">
                 <span class="badge text-bg-dark">About us</span>
               </div>
-              <h2 class="mb-0" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Why choose us</h2>
-              <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">We believe that the best technology is built through shared vision and strong teamwork. </p>
+              <h2 class="mb-0" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Hydtech.</h2>
+              {{-- <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">We believe that the best technology is built through shared vision and strong teamwork. </p> --}}
             </div>
           </div>
-          <div class="col-xl-9 col-xxl-8">
-            <div class="row">
-              <div class="col-lg-4 mb-7 mb-lg-0">
-                <div class="card position-relative overflow-hidden bg-primary h-100" data-aos="fade-up"
-                  data-aos-delay="100" data-aos-duration="1000">
-                  <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="d-flex flex-column gap-3 position-relative z-1">
-                      <ul class="list-unstyled mb-0 hstack gap-1">
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-line-duotone"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                      </ul>
-                      <p class="mb-0 fs-6 text-dark">The team exceeded our expectations with a stunning brand identity.
-                      </p>
-                    </div>
-                    <div class="position-relative z-1">
-                      <div class="pb-6 border-bottom">
-                        <h2 class="mb-0">98.6%</h2>
-                        <p class="mb-0">Customer satisfaction</p>
-                      </div>
-                      <div class="hstack gap-6 pt-6">
-                        <img src="../assets/images/profile/user-1.jpg" alt=""
-                          class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="64" height="64">
-                        <div>
-                          <h5 class="mb-0">Wade Warren</h5>
-                          <p class="mb-0">Bank of America</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="position-absolute bottom-0 end-0">
-                      <img src="../assets/images/backgrounds/customer-satisfaction-bg.svg" alt="" class="img-fluid">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 mb-7 mb-lg-0">
-                <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                  <div class="position-relative">
-                    <img src="../assets/images/services/services-img-2.jpg" alt="" class="img-fluid w-100">
-                  </div>
+          <div class="col-lg-8">
+              <div class="d-flex flex-column gap-4 gap-lg-5" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="1000">
+                <p class="mb-0 fs-5 text-dark">
+                  Behind every smart idea and innovative technology, there is an extraordinary team working with passion, expertise, and collaboration. We believe that the best technology is built through shared vision and strong teamwork.
 
-                  <div class="card bg-dark">
-                    <div class="card-body d-flex flex-column gap-7">
-                      <div>
-                        <h2 class="mb-0 text-white">500+</h2>
-                        <p class="mb-0 text-white text-opacity-70">Successful projects completed</p>
-                      </div>
-                      <ul class="d-flex align-items-center mb-0">
-                        <li>
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-1.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-1">
-                          </a>
-                        </li>
-                        <li class="ms-n2">
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-2.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-2">
-                          </a>
-                        </li>
-                        <li class="ms-n2">
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-3.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-3">
-                          </a>
-                        </li>
-                        <li class="ms-n2">
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-4.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-4">
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 mb-7 mb-lg-0">
-                <div class="card border h-100 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="300"
-                  data-aos-duration="1000">
-                  <span
-                    class="border rounded-circle round-490 d-block position-absolute top-0 start-50 translate-middle"></span>
-                  <div class="card-body d-flex flex-column justify-content-between">
-                    <div>
-                      <h2 class="mb-0">238+</h2>
-                      <p class="mb-0 text-dark">Brands served worldwide</p>
-                    </div>
-
-                    <div class="d-flex flex-column gap-3">
-                      <a href="{{ route('home') }}" class="logo-dark text-decoration-none">
-  <span class="fw-bold text-dark" style="font-size: 2rem;">Hydtech.</span>
-</a>
-
-                      <p class="mb-0 fs-5 text-dark">Our global reach allows us to create unique, culturally relevant
-                        designs for businesses across different industries.</p>
-                    </div>
-                  </div>
-                  <span
-                    class="border rounded-circle round-490 d-block position-absolute top-100 start-50 translate-middle"></span>
-                </div>
+                </p>
+                <p class="mb-0 fs-5 text-dark">
+                  Every member of the Hydtech team plays a vital role in creating smart, impactful, and sustainable digital solutions. Together, we continue to learn, grow, and innovate to address the challenges of an ever-evolving world.
+                </p>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -421,7 +323,7 @@
                   <span
                     class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">05</span>
                   <hr class="border-line bg-white">
-                  <span class="badge text-bg-dark">Clients</span>
+                  <span class="badge text-bg-dark">Partners</span>
                 </div>
               </div>
               <div class="col-xl-8 col-xxl-7">
@@ -429,7 +331,7 @@
                   <div class="col-xxl-8">
                     <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                       data-aos-duration="1000">
-                      <h2 class="mb-0">Partners and Clients</h2>
+                      <h2 class="mb-0">Our Partners</h2>
                       <p class="fs-5 mb-0 text-opacity-70">A glimpse into our creativity—exploring innovative designs,
                         successful collaborations, and transformative digital experiences.</p>
                     </div>

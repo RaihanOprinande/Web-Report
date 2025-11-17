@@ -23,7 +23,7 @@ class ProjekKategoriController extends Controller
     $request->validate([
         'nama_kategori' => 'required|string|max:255',
         'deskripsi' => 'nullable|string',
-        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:10000',
     ]);
 
     $data = $request->only(['nama_kategori', 'deskripsi']);
@@ -50,7 +50,7 @@ class ProjekKategoriController extends Controller
         $validated = $request->validate([
             'nama_kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:10000',
         ]);
 
         $dataUpdate = [

@@ -25,7 +25,7 @@ class DokumentasiController extends Controller
     {
         $request->validate([
             'projek_id' => 'required|exists:projeks,id',
-            'gambar' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'required|image|mimes:jpg,jpeg,png|max:10000',
             'deskripsi' => 'required|string',
         ]);
 
@@ -50,7 +50,7 @@ class DokumentasiController extends Controller
     {
         $request->validate([
             'projek_id' => 'required|exists:projeks,id',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:10000',
             'deskripsi' => 'required|string',
         ]);
 

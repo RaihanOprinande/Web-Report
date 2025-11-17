@@ -3,22 +3,48 @@
 @section('title', 'Tambah Projek')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Projek</h1>
-            <a href="{{ route('projek.index') }}" class="btn btn-secondary btn-sm">Kembali</a>
+
+<style>
+    .btn-kembali {
+        color: #4e73df;
+    }
+
+    .btn-kembali:hover {
+        background-color: #4e73df;
+        color: white;
+    }
+</style>
+
+<div class="bungkus">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Tambah Projek</h1>
+        <a href="{{ route('projek.index') }}" class="btn btn-secondary btn-sm">
+            <i class="fas fa-arrow-left fa-sm text-white-50"></i> Kembali
+        </a>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Projek</h6>
         </div>
 
-        <div class="card shadow mb-4">
-            <div class="card-body">
-                <form action="{{ route('projek.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <label>Nama Projek</label>
+        <div class="card-body">
+
+            <form action="{{ route('projek.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="row">
+
+                    {{-- Nama Projek --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Nama Projek</label>
                         <input type="text" name="name_projek" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label>Kategori Projek</label>
+
+                    {{-- Kategori Projek --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Kategori Projek</label>
                         <select name="projek_kategori_id" class="form-control">
                             <option value="">Pilih Kategori</option>
                             @foreach($kategoris as $kategori)
@@ -26,28 +52,40 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Client</label>
+
+                    {{-- Client --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Client</label>
                         <input type="text" name="client" class="form-control" required>
                     </div>
-                    <div>
-                        <label>Thumbnail</label>
+
+                    {{-- Thumbnail --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Thumbnail</label>
                         <input type="file" name="thumbnail" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label>Tanggal Mulai</label>
+
+                    {{-- Tanggal Mulai --}}
+                    <div class="col-md-4 mb-3">
+                        <label class="font-weight-bold">Tanggal Mulai</label>
                         <input type="date" name="tanggal_mulai" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label>Tanggal Selesai</label>
+
+                    {{-- Tanggal Selesai --}}
+                    <div class="col-md-4 mb-3">
+                        <label class="font-weight-bold">Tanggal Selesai</label>
                         <input type="date" name="tanggal_selesai" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label>Deadline</label>
+
+                    {{-- Deadline --}}
+                    <div class="col-md-4 mb-3">
+                        <label class="font-weight-bold">Deadline</label>
                         <input type="date" name="deadline" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label>Prioritas</label>
+
+                    {{-- Prioritas --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Prioritas</label>
                         <select name="prioritas" class="form-control" required>
                             <option value="">Pilih Prioritas</option>
                             <option value="tinggi">Tinggi</option>
@@ -55,8 +93,10 @@
                             <option value="rendah">Rendah</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Status</label>
+
+                    {{-- Status --}}
+                    <div class="col-md-6 mb-3">
+                        <label class="font-weight-bold">Status</label>
                         <select name="status" class="form-control" required>
                             <option value="">Pilih Status</option>
                             <option value="akan datang">Akan Datang</option>
@@ -64,13 +104,24 @@
                             <option value="selesai">Selesai</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control"></textarea>
+
+                    {{-- Deskripsi --}}
+                    <div class="col-md-12 mb-3">
+                        <label class="font-weight-bold">Deskripsi</label>
+                        <textarea name="deskripsi" class="form-control" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </form>
-            </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-save"></i> Simpan Projek
+                </button>
+
+            </form>
+
         </div>
     </div>
+
+</div>
+
 @endsection

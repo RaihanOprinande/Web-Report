@@ -22,7 +22,7 @@ class MediaPartnerController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:10000'
         ]);
 
         $data = $request->only(['nama']);
@@ -45,7 +45,7 @@ class MediaPartnerController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:10000'
         ]);
 
         $data = $request->only(['nama']);

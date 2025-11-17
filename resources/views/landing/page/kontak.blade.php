@@ -1,12 +1,12 @@
 @extends('landing.layouts.main')
 
-@section('title', 'Kontak')
+@section('title', 'Hydtech')
 
 @section('content')
 
 <!--  Banner Section -->
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-      style="background-image: url(../assets/images/backgrounds/contact.jpg);">
+      style="background-image: url(../assets/images/backgrounds/kontak.jpg);">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
           <div class="row align-items-center">
